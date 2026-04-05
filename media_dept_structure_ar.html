@@ -1,190 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-:root{--c1b:#E6F1FB;--c1d:#185FA5;--c1t:#0C447C;--c2b:#E1F5EE;--c2d:#0F6E56;--c2t:#085041;--c3b:#FAEEDA;--c3d:#854F0B;--c3t:#633806;--c4b:#EEEDFE;--c4d:#534AB7;--c4t:#3C3489;}
-@media(prefers-color-scheme:dark){:root{--c1b:#042C53;--c1d:#85B7EB;--c1t:#B5D4F4;--c2b:#04342C;--c2d:#5DCAA5;--c2t:#9FE1CB;--c3b:#412402;--c3d:#EF9F27;--c3t:#FAC775;--c4b:#26215C;--c4d:#AFA9EC;--c4t:#CECBF6;}}
-.dc{border-radius:10px;padding:14px 10px;cursor:pointer;transition:all .15s;text-align:center;border:0.5px solid;}
-.dc:hover{transform:translateY(-2px);}
-.tb{border:none;background:none;padding:9px 14px;cursor:pointer;font-size:13px;border-bottom:2px solid transparent;color:var(--color-text-secondary);font-family:var(--font-sans);white-space:nowrap;transition:all .15s;}
-.tb.act{color:var(--color-text-primary);font-weight:500;}
-.pn{display:none;}.pn.act{display:block;animation:fd .2s ease;}
-@keyframes fd{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+:root{
+--font-sans: "Tahoma","Arial",sans-serif;
+
+/* ألوان النظام (تم إضافتها) */
+--color-background-secondary:#ffffff;
+--color-border-secondary:#dcdcdc;
+--color-border-tertiary:#eaeaea;
+--color-text-primary:#1a1a1a;
+--color-text-secondary:#666;
+--color-text-tertiary:#999;
+
+/* ألوان الأقسام */
+--c1b:#E6F1FB;--c1d:#185FA5;--c1t:#0C447C;
+--c2b:#E1F5EE;--c2d:#0F6E56;--c2t:#085041;
+--c3b:#FAEEDA;--c3d:#854F0B;--c3t:#633806;
+--c4b:#EEEDFE;--c4d:#534AB7;--c4t:#3C3489;
+}
+
+body{
+margin:0;
+background:#f9fafb;
+font-family:var(--font-sans);
+}
+
+/* نفس كودك مع تحسينات بسيطة */
+.dc{border-radius:10px;padding:14px 10px;cursor:pointer;transition:.2s;text-align:center;border:1px solid;}
+.dc:hover{transform:translateY(-3px);}
+
+.tb{border:none;background:none;padding:10px 14px;cursor:pointer;font-size:13px;border-bottom:2px solid transparent;white-space:nowrap;}
+.tb.act{font-weight:bold;}
+
+.pn{display:none;}
+.pn.act{display:block;}
+
 .igrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0;}
-.ic{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:11px 12px;}
-.ict{font-weight:500;font-size:13px;color:var(--color-text-primary);}
-.icd{font-size:12px;color:var(--color-text-secondary);margin-top:4px;line-height:1.55;}
-.gf{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:10px;}
-.gs{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:6px;padding:6px 10px;font-size:12px;color:var(--color-text-secondary);}
-.ga{color:var(--color-text-tertiary);font-size:13px;}
-.st{font-size:14px;font-weight:500;color:var(--color-text-primary);margin:18px 0 8px;}
-.desc{font-size:13px;color:var(--color-text-secondary);line-height:1.7;border-right:3px solid;padding-right:12px;}
-.badge{display:inline-block;font-size:11px;padding:3px 10px;border-radius:4px;font-weight:500;border:0.5px solid;margin-bottom:10px;}
+.ic{background:#fff;border:1px solid #eee;border-radius:8px;padding:11px;}
+.ict{font-weight:bold;font-size:13px;}
+.icd{font-size:12px;color:#666;margin-top:4px;}
+
+.gf{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.gs{background:#fff;border:1px solid #eee;border-radius:6px;padding:6px 10px;font-size:12px;}
+.ga{color:#999;}
+
+.st{font-size:14px;font-weight:bold;margin:18px 0 8px;}
+.desc{font-size:13px;line-height:1.7;border-right:3px solid;padding-right:12px;}
+
+.badge{display:inline-block;font-size:11px;padding:3px 10px;border-radius:4px;border:1px solid;margin-bottom:10px;}
 </style>
+</head>
 
-<div dir="rtl" style="font-family:var(--font-sans);padding:0.25rem 0;">
+<body>
 
+<div style="max-width:1100px;margin:auto;padding:20px;">
+
+<!-- العنوان -->
 <div style="text-align:center;margin-bottom:20px;">
-  <div style="display:inline-block;background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);border-radius:12px;padding:13px 44px;">
-    <div style="font-size:17px;font-weight:500;color:var(--color-text-primary);">إدارة الإعلام</div>
-    <div style="font-size:12px;color:var(--color-text-secondary);margin-top:3px;">تطوير الأعمال والتسويق</div>
+  <div style="display:inline-block;background:#fff;border:1px solid #ddd;border-radius:12px;padding:14px 40px;">
+    <div style="font-size:18px;font-weight:bold;">إدارة الإعلام</div>
+    <div style="font-size:12px;color:#777;">تطوير الأعمال والتسويق</div>
   </div>
 </div>
 
-<div style="display:flex;justify-content:center;margin-bottom:-1px;">
-  <div style="width:1px;height:14px;background:var(--color-border-secondary);"></div>
-</div>
-<div style="height:1px;background:var(--color-border-secondary);margin:0 12%;"></div>
-
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:0;padding-top:0;">
-  <div style="display:flex;justify-content:center;">
-    <div style="width:1px;height:14px;background:var(--color-border-secondary);"></div>
-  </div>
-  <div style="display:flex;justify-content:center;">
-    <div style="width:1px;height:14px;background:var(--color-border-secondary);"></div>
-  </div>
-  <div style="display:flex;justify-content:center;">
-    <div style="width:1px;height:14px;background:var(--color-border-secondary);"></div>
-  </div>
-  <div style="display:flex;justify-content:center;">
-    <div style="width:1px;height:14px;background:var(--color-border-secondary);"></div>
-  </div>
-</div>
-
+<!-- الأقسام -->
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px;">
-  <div class="dc" id="dc1" onclick="showDiv(1)" style="background:var(--c1b);border-color:var(--c1d);">
-    <div style="font-size:13px;font-weight:500;color:var(--c1t);">التخطيط</div>
-    <div style="font-size:13px;font-weight:500;color:var(--c1t);">الاستراتيجي</div>
-    <div style="font-size:11px;color:var(--c1t);opacity:0.65;margin-top:6px;">القسم الأول</div>
+
+  <div class="dc" id="dc1" onclick="showDiv(1)" style="background:var(--c1b);border-color:var(--c1d);color:var(--c1t);">
+    التخطيط الاستراتيجي
   </div>
-  <div class="dc" id="dc2" onclick="showDiv(2)" style="background:var(--c2b);border-color:var(--c2d);">
-    <div style="font-size:13px;font-weight:500;color:var(--c2t);">العلاقات</div>
-    <div style="font-size:13px;font-weight:500;color:var(--c2t);">الإعلامية</div>
-    <div style="font-size:11px;color:var(--c2t);opacity:0.65;margin-top:6px;">القسم الثاني</div>
+
+  <div class="dc" id="dc2" onclick="showDiv(2)" style="background:var(--c2b);border-color:var(--c2d);color:var(--c2t);">
+    العلاقات الإعلامية
   </div>
-  <div class="dc" id="dc3" onclick="showDiv(3)" style="background:var(--c3b);border-color:var(--c3d);">
-    <div style="font-size:13px;font-weight:500;color:var(--c3t);">تطوير</div>
-    <div style="font-size:13px;font-weight:500;color:var(--c3t);">المحتوى</div>
-    <div style="font-size:11px;color:var(--c3t);opacity:0.65;margin-top:6px;">القسم الثالث</div>
+
+  <div class="dc" id="dc3" onclick="showDiv(3)" style="background:var(--c3b);border-color:var(--c3d);color:var(--c3t);">
+    تطوير المحتوى
   </div>
-  <div class="dc" id="dc4" onclick="showDiv(4)" style="background:var(--c4b);border-color:var(--c4d);">
-    <div style="font-size:13px;font-weight:500;color:var(--c4t);">الرصد</div>
-    <div style="font-size:13px;font-weight:500;color:var(--c4t);">والتحليل</div>
-    <div style="font-size:11px;color:var(--c4t);opacity:0.8;margin-top:6px;font-weight:500;">القسم الرابع ✦</div>
+
+  <div class="dc" id="dc4" onclick="showDiv(4)" style="background:var(--c4b);border-color:var(--c4d);color:var(--c4t);">
+    الرصد والتحليل
   </div>
+
 </div>
 
-<div style="display:flex;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:18px;overflow-x:auto;" id="tabbar">
-  <button class="tb" id="tb1" onclick="showDiv(1)">التخطيط الاستراتيجي</button>
-  <button class="tb" id="tb2" onclick="showDiv(2)">العلاقات الإعلامية</button>
-  <button class="tb" id="tb3" onclick="showDiv(3)">تطوير المحتوى</button>
-  <button class="tb" id="tb4" onclick="showDiv(4)">الرصد والتحليل</button>
+<!-- التبويبات -->
+<div style="display:flex;border-bottom:1px solid #ddd;margin-bottom:15px;">
+  <button class="tb" id="tb1" onclick="showDiv(1)">التخطيط</button>
+  <button class="tb" id="tb2" onclick="showDiv(2)">العلاقات</button>
+  <button class="tb" id="tb3" onclick="showDiv(3)">المحتوى</button>
+  <button class="tb" id="tb4" onclick="showDiv(4)">الرصد</button>
 </div>
 
-<div class="pn" id="p1">
-  <p class="desc" style="border-color:var(--c1d);">يُعنى هذا القسم بوضع الرؤية الإعلامية الشاملة للهيئة، وبناء الهوية الإعلامية للقيادة، وتأهيل المتحدثين الرسميين لمختلف المناسبات والظهورات الإعلامية والمحافل الوطنية والدولية.</p>
-  <div class="st">المبادرات والمهام الرئيسية</div>
-  <div class="igrid">
-    <div class="ic" style="border-right:3px solid var(--c1d);"><div class="ict">الظهور الإعلامي للقيادة</div><div class="icd">إدارة وتنسيق ظهورات المسؤولين في وسائل الإعلام المحلية والدولية</div></div>
-    <div class="ic" style="border-right:3px solid var(--c1d);"><div class="ict">تدريب القيادات الإعلامي</div><div class="icd">برامج تدريبية على اللقاءات الإعلامية والجلسات والندوات المتخصصة</div></div>
-    <div class="ic" style="border-right:3px solid var(--c1d);"><div class="ict">إدارة حضور الفعاليات</div><div class="icd">التخطيط والتنسيق لتمثيل الهيئة في المؤتمرات والمنتديات الوطنية والدولية</div></div>
-    <div class="ic" style="border-right:3px solid var(--c1d);"><div class="ict">الخطة الإعلامية السنوية</div><div class="icd">خطة متكاملة تشمل الأهداف والرسائل والقنوات والجداول الزمنية</div></div>
-    <div class="ic" style="border-right:3px solid var(--c1d);"><div class="ict">بناء الرسائل المؤسسية</div><div class="icd">صياغة نقاط الحديث الرئيسية والرسائل الموحدة للجهات المستهدفة</div></div>
-    <div class="ic" style="border-right:3px solid var(--c1d);"><div class="ict">خارطة الوسائل الإعلامية</div><div class="icd">تحديد القنوات الإعلامية المستهدفة بما يتوافق مع الأهداف المؤسسية</div></div>
-  </div>
-  <div class="st">الحوكمة وتسلسل الإجراءات</div>
-  <div class="gf">
-    <div class="gs">إعداد مسودة الخطة الإعلامية</div><div class="ga">←</div>
-    <div class="gs">مراجعة مدير الإعلام</div><div class="ga">←</div>
-    <div class="gs">اعتماد رئيس التسويق والاتصال</div><div class="ga">←</div>
-    <div class="gs">التنفيذ والمتابعة</div>
-  </div>
+<!-- المحتوى -->
+<div id="p1" class="pn act">
+  <p class="desc" style="border-color:var(--c1d);">
+  التخطيط الإعلامي الاستراتيجي وبناء الرسائل المؤسسية.
+  </p>
 </div>
 
-<div class="pn" id="p2">
-  <p class="desc" style="border-color:var(--c2d);">يتولى هذا القسم إدارة علاقات الهيئة مع منظومة الإعلام الوطني، وبناء شراكات إعلامية مستدامة، والتعامل المهني مع وسائل الإعلام والصحفيين لضمان صورة مؤسسية إيجابية ومتسقة.</p>
-  <div class="st">المبادرات والمهام الرئيسية</div>
-  <div class="igrid">
-    <div class="ic" style="border-right:3px solid var(--c2d);"><div class="ict">قاعدة بيانات الإعلاميين</div><div class="icd">بناء وتحديث قاعدة بيانات شاملة للصحفيين والإعلاميين والمؤثرين</div></div>
-    <div class="ic" style="border-right:3px solid var(--c2d);"><div class="ict">زيارات الوفود الصحفية</div><div class="icd">برنامج منظم لاستقبال الوفود الصحفية وجولات تعريفية بمنشآت الهيئة</div></div>
-    <div class="ic" style="border-right:3px solid var(--c2d);"><div class="ict">مبادرات الشراكة الإعلامية</div><div class="icd">إبرام اتفاقيات شراكة مع وسائل الإعلام الوطنية لتعزيز الحضور المؤسسي</div></div>
-    <div class="ic" style="border-right:3px solid var(--c2d);"><div class="ict">إدارة استفسارات الإعلام</div><div class="icd">بروتوكول واضح للرد الفوري على استفسارات وسائل الإعلام والصحفيين</div></div>
-    <div class="ic" style="border-right:3px solid var(--c2d);"><div class="ict">المؤتمرات والإحاطات الإعلامية</div><div class="icd">تنظيم وإدارة المؤتمرات الصحفية والإحاطات الدورية لوسائل الإعلام</div></div>
-    <div class="ic" style="border-right:3px solid var(--c2d);"><div class="ict">بروتوكول إدارة الأزمات</div><div class="icd">خطة إعلامية جاهزة للتعامل مع الأزمات والمواقف الإعلامية الحرجة</div></div>
-  </div>
-  <div class="st">الحوكمة وتسلسل الإجراءات</div>
-  <div class="gf">
-    <div class="gs">إشعار / طلب التغطية</div><div class="ga">←</div>
-    <div class="gs">إعداد المواد الإعلامية</div><div class="ga">←</div>
-    <div class="gs">مراجعة مدير الإعلام</div><div class="ga">←</div>
-    <div class="gs">اعتماد رئيس التسويق والتواصل</div><div class="ga">←</div>
-    <div class="gs">تنفيذ التغطية الإعلامية</div><div class="ga">←</div>
-    <div class="gs">الأرشفة</div>
-  </div>
+<div id="p2" class="pn">
+  <p class="desc" style="border-color:var(--c2d);">
+  إدارة العلاقات الإعلامية وبناء الشراكات.
+  </p>
 </div>
 
-<div class="pn" id="p3">
-  <p class="desc" style="border-color:var(--c3d);">يتولى هذا القسم إنتاج وتطوير جميع المحتويات المكتوبة والتحريرية التي تمثل الهيئة رسمياً، بدءاً من البيانات الصحفية حتى التقارير السنوية والمراسلات الرسمية مع الجهات العليا.</p>
-  <div class="st">المبادرات والمهام الرئيسية</div>
-  <div class="igrid">
-    <div class="ic" style="border-right:3px solid var(--c3d);"><div class="ict">التقرير السنوي للهيئة</div><div class="icd">الإشراف على إعداد وتطوير ونشر التقرير السنوي الشامل للهيئة</div></div>
-    <div class="ic" style="border-right:3px solid var(--c3d);"><div class="ict">البيانات والتقارير الصحفية</div><div class="icd">صياغة واعتماد جميع البيانات الرسمية والتقارير الصحفية للهيئة</div></div>
-    <div class="ic" style="border-right:3px solid var(--c3d);"><div class="ict">الخطابات والكلمات الرسمية</div><div class="icd">كتابة وصياغة الكلمات الرسمية والخطابات للمسؤولين في المناسبات</div></div>
-    <div class="ic" style="border-right:3px solid var(--c3d);"><div class="ict">الرد على الجهات السامية</div><div class="icd">صياغة الردود الرسمية على مراسلات ومتطلبات الجهات الحكومية العليا</div></div>
-    <div class="ic" style="border-right:3px solid var(--c3d);"><div class="ict">المحتوى التحريري الرقمي</div><div class="icd">إنتاج المحتوى الإعلامي للمنصات الرقمية وموقع الهيئة الإلكتروني</div></div>
-    <div class="ic" style="border-right:3px solid var(--c3d);"><div class="ict">المواد الترويجية المكتوبة</div><div class="icd">إعداد نصوص الحملات الإعلانية والمبادرات المؤسسية وكتيبات التعريف</div></div>
-  </div>
-  <div class="st">الحوكمة وتسلسل الإجراءات</div>
-  <div class="gf">
-    <div class="gs">طلب من الإدارة المعنية</div><div class="ga">←</div>
-    <div class="gs">إعداد مسودة المحتوى</div><div class="ga">←</div>
-    <div class="gs">مراجعة مدير الإعلام</div><div class="ga">←</div>
-    <div class="gs">اعتماد رئيس التسويق والاتصال</div><div class="ga">←</div>
-    <div class="gs">النشر / الإرسال</div><div class="ga">←</div>
-    <div class="gs">الأرشفة</div>
-  </div>
+<div id="p3" class="pn">
+  <p class="desc" style="border-color:var(--c3d);">
+  إنتاج المحتوى والتقارير الرسمية.
+  </p>
 </div>
 
-<div class="pn" id="p4">
-  <div>
-    <span class="badge" style="background:var(--c4b);color:var(--c4t);border-color:var(--c4d);">قسم مقترح — بناءً على أفضل الممارسات الحكومية</span>
-  </div>
-  <p class="desc" style="border-color:var(--c4d);">يُوصى بإنشاء هذا القسم استناداً لأفضل الممارسات في الجهات الحكومية كهيئة الاتصالات والفضاء ووزارة الإعلام وهيئة الصحفيين السعوديين. يختص بمتابعة المشهد الإعلامي وتحليله ودعم صانع القرار بمعلومات دقيقة وتوصيات استراتيجية في الوقت المناسب.</p>
-  <div class="st">المبادرات والمهام الرئيسية</div>
-  <div class="igrid">
-    <div class="ic" style="border-right:3px solid var(--c4d);"><div class="ict">الرصد الإعلامي اليومي</div><div class="icd">متابعة وتتبع التغطيات الإعلامية المتعلقة بالهيئة في الوسائل التقليدية والرقمية</div></div>
-    <div class="ic" style="border-right:3px solid var(--c4d);"><div class="ict">تقارير الأداء الإعلامي</div><div class="icd">إعداد تقارير أسبوعية وشهرية وربعية تقيّم الحضور والتأثير الإعلامي للهيئة</div></div>
-    <div class="ic" style="border-right:3px solid var(--c4d);"><div class="ict">تحليل المشاعر والسمعة</div><div class="icd">رصد وقياس مؤشرات السمعة المؤسسية وتحليل توجهات الرأي العام تجاه الهيئة</div></div>
-    <div class="ic" style="border-right:3px solid var(--c4d);"><div class="ict">لوحة مؤشرات الأداء الإعلامي</div><div class="icd">بناء وتشغيل لوحة بيانات تفاعلية لمتابعة مؤشرات الأداء الإعلامي الرئيسية</div></div>
-    <div class="ic" style="border-right:3px solid var(--c4d);"><div class="ict">الذكاء الإعلامي الاستراتيجي</div><div class="icd">رصد توجهات المشهد الإعلامي واستشراف الفرص والمخاطر الإعلامية المستقبلية</div></div>
-    <div class="ic" style="border-right:3px solid var(--c4d);"><div class="ict">الأرشيف الإعلامي المؤسسي</div><div class="icd">بناء وإدارة قاعدة بيانات أرشيفية لجميع المواد والتغطيات الإعلامية للهيئة</div></div>
-  </div>
-  <div class="st">الحوكمة وتسلسل الإجراءات</div>
-  <div class="gf">
-    <div class="gs">الرصد الإعلامي اليومي</div><div class="ga">←</div>
-    <div class="gs">إعداد مسودة التقرير</div><div class="ga">←</div>
-    <div class="gs">مراجعة مدير الإعلام</div><div class="ga">←</div>
-    <div class="gs">اعتماد رئيس التسويق والتواصل</div><div class="ga">←</div>
-    <div class="gs">نشر التقرير للهيئة</div><div class="ga">←</div>
-    <div class="gs">الأرشفة</div>
-  </div>
+<div id="p4" class="pn">
+  <p class="desc" style="border-color:var(--c4d);">
+  الرصد الإعلامي وتحليل السمعة.
+  </p>
 </div>
 
 </div>
 
 <script>
-const colors=['','--c1d','--c2d','--c3d','--c4d'];
 function showDiv(n){
   [1,2,3,4].forEach(i=>{
-    const dc=document.getElementById('dc'+i);
-    const tb=document.getElementById('tb'+i);
-    const pn=document.getElementById('p'+i);
-    const sel=i===n;
-    dc.style.outline=sel?'2px solid var('+colors[i]+')':'none';
-    dc.style.outlineOffset=sel?'2px':'0';
-    tb.classList.toggle('act',sel);
-    tb.style.borderBottomColor=sel?'var('+colors[i]+')':'transparent';
-    tb.style.color=sel?'var('+colors[i]+')':'';
-    pn.classList.toggle('act',sel);
+    document.getElementById('p'+i).classList.remove('act');
+    document.getElementById('tb'+i).classList.remove('act');
   });
+
+  document.getElementById('p'+n).classList.add('act');
+  document.getElementById('tb'+n).classList.add('act');
 }
-showDiv(1);
 </script>
+
+</body>
+</html>
