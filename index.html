@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+--font-sans: "Tahoma","Arial",sans-serif;
+
+/* ألوان النظام (تم إضافتها) */
+--color-background-secondary:#ffffff;
+--color-border-secondary:#dcdcdc;
+--color-border-tertiary:#eaeaea;
+--color-text-primary:#1a1a1a;
+--color-text-secondary:#666;
+--color-text-tertiary:#999;
+
+/* ألوان الأقسام */
+--c1b:#E6F1FB;--c1d:#185FA5;--c1t:#0C447C;
+--c2b:#E1F5EE;--c2d:#0F6E56;--c2t:#085041;
+--c3b:#FAEEDA;--c3d:#854F0B;--c3t:#633806;
+--c4b:#EEEDFE;--c4d:#534AB7;--c4t:#3C3489;
+}
+
+body{
+margin:0;
+background:#f9fafb;
+font-family:var(--font-sans);
+}
+
+/* نفس كودك مع تحسينات بسيطة */
+.dc{border-radius:10px;padding:14px 10px;cursor:pointer;transition:.2s;text-align:center;border:1px solid;}
+.dc:hover{transform:translateY(-3px);}
+
+.tb{border:none;background:none;padding:10px 14px;cursor:pointer;font-size:13px;border-bottom:2px solid transparent;white-space:nowrap;}
+.tb.act{font-weight:bold;}
+
+.pn{display:none;}
+.pn.act{display:block;}
+
+.igrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0;}
+.ic{background:#fff;border:1px solid #eee;border-radius:8px;padding:11px;}
+.ict{font-weight:bold;font-size:13px;}
+.icd{font-size:12px;color:#666;margin-top:4px;}
+
+.gf{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.gs{background:#fff;border:1px solid #eee;border-radius:6px;padding:6px 10px;font-size:12px;}
+.ga{color:#999;}
+
+.st{font-size:14px;font-weight:bold;margin:18px 0 8px;}
+.desc{font-size:13px;line-height:1.7;border-right:3px solid;padding-right:12px;}
+
+.badge{display:inline-block;font-size:11px;padding:3px 10px;border-radius:4px;border:1px solid;margin-bottom:10px;}
+</style>
+</head>
+
+<body>
+
+<div style="max-width:1100px;margin:auto;padding:20px;">
+
+<!-- العنوان -->
+<div style="text-align:center;margin-bottom:20px;">
+  <div style="display:inline-block;background:#fff;border:1px solid #ddd;border-radius:12px;padding:14px 40px;">
+    <div style="font-size:18px;font-weight:bold;">إدارة الإعلام</div>
+    <div style="font-size:12px;color:#777;">تطوير الأعمال والتسويق</div>
+  </div>
+</div>
+
+<!-- الأقسام -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px;">
+
+  <div class="dc" id="dc1" onclick="showDiv(1)" style="background:var(--c1b);border-color:var(--c1d);color:var(--c1t);">
+    التخطيط الاستراتيجي
+  </div>
+
+  <div class="dc" id="dc2" onclick="showDiv(2)" style="background:var(--c2b);border-color:var(--c2d);color:var(--c2t);">
+    العلاقات الإعلامية
+  </div>
+
+  <div class="dc" id="dc3" onclick="showDiv(3)" style="background:var(--c3b);border-color:var(--c3d);color:var(--c3t);">
+    تطوير المحتوى
+  </div>
+
+  <div class="dc" id="dc4" onclick="showDiv(4)" style="background:var(--c4b);border-color:var(--c4d);color:var(--c4t);">
+    الرصد والتحليل
+  </div>
+
+</div>
+
+<!-- التبويبات -->
+<div style="display:flex;border-bottom:1px solid #ddd;margin-bottom:15px;">
+  <button class="tb" id="tb1" onclick="showDiv(1)">التخطيط</button>
+  <button class="tb" id="tb2" onclick="showDiv(2)">العلاقات</button>
+  <button class="tb" id="tb3" onclick="showDiv(3)">المحتوى</button>
+  <button class="tb" id="tb4" onclick="showDiv(4)">الرصد</button>
+</div>
+
+<!-- المحتوى -->
+<div id="p1" class="pn act">
+  <p class="desc" style="border-color:var(--c1d);">
+  التخطيط الإعلامي الاستراتيجي وبناء الرسائل المؤسسية.
+  </p>
+</div>
+
+<div id="p2" class="pn">
+  <p class="desc" style="border-color:var(--c2d);">
+  إدارة العلاقات الإعلامية وبناء الشراكات.
+  </p>
+</div>
+
+<div id="p3" class="pn">
+  <p class="desc" style="border-color:var(--c3d);">
+  إنتاج المحتوى والتقارير الرسمية.
+  </p>
+</div>
+
+<div id="p4" class="pn">
+  <p class="desc" style="border-color:var(--c4d);">
+  الرصد الإعلامي وتحليل السمعة.
+  </p>
+</div>
+
+</div>
+
+<script>
+function showDiv(n){
+  [1,2,3,4].forEach(i=>{
+    document.getElementById('p'+i).classList.remove('act');
+    document.getElementById('tb'+i).classList.remove('act');
+  });
+
+  document.getElementById('p'+n).classList.add('act');
+  document.getElementById('tb'+n).classList.add('act');
+}
+</script>
+
+</body>
+</html>
